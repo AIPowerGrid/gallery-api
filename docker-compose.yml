@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  web:
+    networks:
+      - aipg
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    env_file:
+      - .env
+    build:
+      context: .
+    command: CompileDaemon -build="go build -buildvcs=false ." --log-prefix=false -command="./gallery"
+    volumes:
+      - .:/go/src/app
+      - /go/src/app/.git/
+    ports:
+      - "6701:3000"
+
+networks:
+  aipg:
+    external: true
+    name: aipg_network

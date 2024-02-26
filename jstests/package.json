@@ -1,0 +1,21 @@
+{
+  "name": "jstests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "faker": "^6.6.6",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
